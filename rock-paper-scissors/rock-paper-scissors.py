@@ -26,24 +26,20 @@ scissors = '''
       (____)
 ---.__(___)
 '''
+games_images = [rock, paper, scissors]
+
 user_choice = input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n')
 computer_choice = str(random.randint(0,2))
 
-print('Your choice:')
-if user_choice == '0':
-	print(rock)
-if user_choice == '1':
-	print(paper)
-if user_choice == '2':
-	print(scissors)
+if int(user_choice) > 2 or int(user_choice) < 0:
+	print('You typed an invalid number. You lose.')
+else: 
+	print('Your choice:')
+	print(games_images[int(user_choice)])
+		
 
 print('Computer chose:')
-if computer_choice == '0':
-	print(rock)
-if computer_choice == '1':
-	print(paper)
-if computer_choice == '2':
-	print(scissors)
+print(games_images[int(computer_choice)])
 
 if user_choice == computer_choice:
 	print('It\'s a tie')
