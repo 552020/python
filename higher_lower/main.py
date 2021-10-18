@@ -22,15 +22,16 @@ while True:
 	if score == 0:
 		a_item = random.choice(data)
 		b_item = random.choice(data)
+        if b_item == a_item:
+			while b_item == a_item:
+				b_item = random.choice(data)
 	else:
 		a_item = b_item
-		print(a_item['name'])
 		b_item = random.choice(data)
 		if b_item == a_item:
 			# print(f"Hallo from the f-loop: {a_item['name']} and {b_item['name']} ")
 			while b_item == a_item:
 				b_item = random.choice(data)
-		print(b_item['name'])
 
 		
 	name_a_item = a_item['name']
