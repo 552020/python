@@ -86,33 +86,48 @@ def make(drink):
 
 
 while True:
-    user_choice = input("What would you like? (espresso/latte/cappuccino): ")
-    if user_choice == "espresso":
-        if not check_resources("espresso"):
+    choice_list = ["espresso", "latte", "cappuccino", "off", "report"]
+    while True:
+        user_choice = input("What would you like? (espresso/latte/cappuccino): ")
+        if user_choice not in choice_list:
+            print(f"Your input '{user_choice}'(sic) is not valid. "
+                  f"Please choose between 'espresso', 'latte' or 'cappuccino', or exit the program with 'off'.")
+        else:
             break
-        coin_sum = insert_coin('espresso')
-        if check_coins(coin_sum, 'espresso'):
-            money += MENU['espresso']['cost']
-            make('espresso')
-            print("Your espresso is ready!")
 
-    if user_choice == "latte":
-        if not check_resources("latte"):
-            break
-        coin_sum = insert_coin('latte')
-        if check_coins(coin_sum, 'latte'):
-            money += MENU['latte']['cost']
-            make('latte')
-            print("Your latte is ready!")
+    if not check_resources(user_choice):
+        break
+    coin_sum = insert_coin(user_choice)
+    if check_coins(coin_sum, user_choice):
+        money += MENU[user_choice]['cost']
+        make(user_choice)
+        print(f"Your {user_choice} is ready!")
+    # if user_choice == "espresso":
+    #     if not check_resources("espresso"):
+    #         break
+    #     coin_sum = insert_coin('espresso')
+    #     if check_coins(coin_sum, 'espresso'):
+    #         money += MENU['espresso']['cost']
+    #         make('espresso')
+    #         print("Your espresso is ready!")
 
-    if user_choice == "cappuccino":
-        if not check_resources("cappuccino"):
-            break
-        coin_sum = insert_coin('cappuccino')
-        if check_coins(coin_sum, 'cappuccino'):
-            money += MENU['cappuccino']['cost']
-            make('cappuccino')
-            print("Your cappuccino is ready!")
+    # if user_choice == "latte":
+    #     if not check_resources("latte"):
+    #         break
+    #     coin_sum = insert_coin('latte')
+    #     if check_coins(coin_sum, 'latte'):
+    #         money += MENU['latte']['cost']
+    #         make('latte')
+    #         print("Your latte is ready!")
+    #
+    # if user_choice == "cappuccino":
+    #     if not check_resources("cappuccino"):
+    #         break
+    #     coin_sum = insert_coin('cappuccino')
+    #     if check_coins(coin_sum, 'cappuccino'):
+    #         money += MENU['cappuccino']['cost']
+    #         make('cappuccino')
+    #         print("Your cappuccino is ready!")
 
     if user_choice == "off":
         print("Goodbye!")
