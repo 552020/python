@@ -108,10 +108,10 @@ while True:
     if user_choice == "cappuccino":
         if not check_resources("cappuccino"):
             break
-        make('cappuccino')
         coin_sum = insert_coin('cappuccino')
         if check_coins(coin_sum, 'cappuccino'):
             money += MENU['cappuccino']['cost']
+            make('cappuccino')
             print("Your cappuccino is ready!")
 
     if user_choice == "off":
