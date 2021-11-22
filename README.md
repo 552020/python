@@ -10,6 +10,8 @@ A list of resources used during the course.
 
 - [PythonAnywhere](https://www.pythonanywhere.com/): "PythonAnywhere is an online IDE and web hosting service (Platform as a service) based on the Python programming language." [Wikipedia](https://en.wikipedia.org/wiki/PythonAnywhere) says. Basically if you have a Python script that you would like to run 24/7 you can let them run for you. Among other Python related things you can use them for.
 
-### Not Python related
+### Not Python related, but programming related
+
+- [API list](https://apilist.fun/): A list of interesting/funny APIs.
 
 ### Other
